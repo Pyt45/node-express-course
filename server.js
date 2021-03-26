@@ -9,7 +9,7 @@ const mockUserData=[
 	{name:'Jill'}
 ]
 
-app.get('/users', function(req, res){
+app.get('/users', (req, res) => {
 	res.json({
 		success: true,
 		message: 'successfully got users. Nice!',
@@ -17,7 +17,7 @@ app.get('/users', function(req, res){
 	})
 })
 
-app.get('/users/:id', function(req, res){
+app.get('/users/:id', (req, res) => {
 	console.log(req.params.id)
 	res.json({
 		success: true,
@@ -26,7 +26,7 @@ app.get('/users/:id', function(req, res){
 	})
 })
 
-app.post('/login', function(req, res){
+app.post('/login', (req, res) => {
 	const username = req.body.username;
 	const password = req.body.password;
 
@@ -45,7 +45,7 @@ app.post('/login', function(req, res){
 			message: 'password and username do not match'
 		})
 	}
-})
+});
 
 
-app.listen(8000, function(){console.log("server is running")})
+app.listen(8000, () => console.log("server is running"))
